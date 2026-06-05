@@ -1,7 +1,12 @@
+import SystemProvider from "./createContext/SystemProvider"
+import Header from "./Pages/Header"
+
 const App = () => {
   return (
     <div>
-      app
+      <SystemProvider>
+        <Header/>
+      </SystemProvider>
     </div>
   )
 }
