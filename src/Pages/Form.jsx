@@ -4,12 +4,11 @@ import SearchContext from "../createContext/SearchContext";
 
 const Form = () => {
   const { value, error, onChange, onBlur } = useForm();
-  const { searchApi, setCity, city } = React.useContext(SearchContext);
+  const { searchCity } = React.useContext(SearchContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setCity(value);
-    searchApi()
+    searchCity(value)
   };
 
   return (
@@ -28,7 +27,6 @@ const Form = () => {
         {error && <span>{error}</span>}
         <button>Search</button>
       </form>
-      {city && <p>{city}</p>}
     </div>
   );
 };

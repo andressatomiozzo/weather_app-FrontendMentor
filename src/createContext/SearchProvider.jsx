@@ -1,21 +1,27 @@
 import React from "react";
 import SearchContext from "./SearchContext";
+import OpenMeteo from "./useSearch";
 
 const SearchProvider = ({ children }) => {
-  const [city, setCity] = React.useState("")
   const [cityData, setCityData] = React.useState(null);
   const [cityError, setCityError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
+  const { weatherData, weatherError, weatherLoading, request } = OpenMeteo();
 
-  const searchApi = async () => {
+  const searchCity = async (cityName) => {
     try {
       setLoading(true);
       setCityError(null);
-      const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
+      const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}`);
       const json = await response.json();
       if (!response.ok) throw new Error("No search results found!");
       if (!json.results) throw new Error("No search results found!");
       setCityData(json);
+      const { latitude, longitude } = json.results[0];
+
+      const weatherData = await request(latitude, longitude);
+
+      console.log(weatherData);
     } catch (err) {
       setCityError(err.message);
       setCityData(null);
@@ -24,7 +30,13 @@ const SearchProvider = ({ children }) => {
     }
   };
 
-  return <SearchContext value={{searchApi, cityError, loading, setCity, city}}>{children}</SearchContext>;
+  return (
+    <SearchContext
+      value={{ searchCity, cityError, loading, cityData, weatherData, weatherError, weatherLoading }}
+    >
+      {children}
+    </SearchContext>
+  );
 };
 
 export default SearchProvider;

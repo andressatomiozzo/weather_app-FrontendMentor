@@ -23,7 +23,7 @@ const Header = () => {
           <button onClick={handleClick}>{metricSystem ? "Switch do Imperial" : "Switch do Metric"}</button>
           <div>
             <span className={styles.optionTitle}>Temperature</span>
-            <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
+            <span className={`${styles.option()} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
             <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Farenheit (ºF)</span>
           </div>
           <div>
