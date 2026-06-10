@@ -1,0 +1,65 @@
+.title{
+  font-family: var(--title);
+  font-weight: 500;
+  font-size: 3.125rem;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input, .button {
+  height: 2.725rem;
+  font-family: var(--text);
+  font-size: 1rem;
+}
+
+.input{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  padding-left: 52px;
+  background: url("../assets/svg/icon-search.svg") no-repeat;
+    background-position: 20px center;
+  background-size: 18px;
+}
+
+.input svg *{
+  fill: var(--Neutral200);
+}
+
+.input, .input::placeholder{
+  background-color: var(--Neutral800);
+  border: none;
+  color: var(--Neutral200);
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--Neutral200);
+  -webkit-box-shadow: 0 0 0px 1000px var(--Neutral800) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.button{
+  background-color: var(--Blue500);
+  border: none;
+  color: var(--Neutral200);
+  font-weight: 600;
+}
+
+.button:focus{
+  outline: none;
+  border: 2px solid var(--Neutral900);
+  box-shadow: 0 0 0 2px var(--Blue500);
+}
+
+.button:hover{
+  background-color: var(--Blue700);
+}
