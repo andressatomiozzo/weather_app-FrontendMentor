@@ -15,15 +15,15 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <Logo />
-      <button onClick={() => setBtnActive(!btnActive)}>Units</button>
+    <header className={styles.header}>
+      <Logo className={styles.logo}/>
+      <button className={styles.button} onClick={() => setBtnActive(!btnActive)}>Units</button>
       {btnActive && (
         <div>
           <button onClick={handleClick}>{metricSystem ? "Switch do Imperial" : "Switch do Metric"}</button>
           <div>
             <span className={styles.optionTitle}>Temperature</span>
-            <span className={`${styles.option()} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
+            <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
             <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Farenheit (ºF)</span>
           </div>
           <div>

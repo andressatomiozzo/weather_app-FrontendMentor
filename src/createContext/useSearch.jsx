@@ -22,7 +22,7 @@ const useSearch = () => {
           "apparent_temperature",
           "relative_humidity_2m",
         ],
-        timezone: "America/Sao_Paulo",
+        timezone: "auto",
       };
       const url = "https://api.open-meteo.com/v1/forecast";
 

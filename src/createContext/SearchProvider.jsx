@@ -17,6 +17,7 @@ const SearchProvider = ({ children }) => {
       if (!response.ok) throw new Error("No search results found!");
       if (!json.results) throw new Error("No search results found!");
       setCityData(json);
+      console.log(json)
       const { latitude, longitude } = json.results[0];
 
       const weatherData = await request(latitude, longitude);

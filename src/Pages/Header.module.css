@@ -1,3 +1,46 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  width: 130px;
+}
+
+.button{
+  width: 5.2rem;
+  height: 2rem;
+  background-color: var(--Neutral800);
+  border: none;
+  border-radius: .3rem;
+
+  font-family: var(--text);
+  font-size: .9rem;
+  color: var(--Neutral0);
+  font-weight: 250;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button:before{
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../assets/svg/icon-units.svg") no-repeat;
+}
+
+.button:after{
+  content: "";
+  display: block;
+  width: 13px;
+  height: 8px;
+  background: url("../assets/svg/icon-dropdown.svg") no-repeat;
+}
+
 .optionTitle{
   
 }
