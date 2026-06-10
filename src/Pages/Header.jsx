@@ -19,23 +19,25 @@ const Header = () => {
       <Logo className={styles.logo}/>
       <button className={styles.button} onClick={() => setBtnActive(!btnActive)}>Units</button>
       {btnActive && (
-        <div>
-          <button onClick={handleClick}>{metricSystem ? "Switch do Imperial" : "Switch do Metric"}</button>
-          <div>
-            <span className={styles.optionTitle}>Temperature</span>
-            <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
-            <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Farenheit (ºF)</span>
-          </div>
-          <div>
-            <span className={styles.optionTitle}>Wind Speed</span>
-            <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>km/h</span>
-            <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>mph</span>
-          </div>
-          <div>
-            <span>Preciptation</span>
-            <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Millimeters (mm)</span>
-            <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Inches (in)</span>
-          </div>
+        <div className={styles.optionsWrapper}>
+          <button onClick={handleClick}>{metricSystem ? "Switch to Imperial" : "Switch to Metric"}</button>
+          <ul>
+            <li className={styles.options}>
+              <span className={styles.optionTitle}>Temperature</span>
+              <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Celsius (ºC)</span>
+              <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Farenheit (ºF)</span>
+            </li>
+            <li className={styles.options}>
+              <span className={styles.optionTitle}>Wind Speed</span>
+              <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>km/h</span>
+              <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>mph</span>
+            </li>
+            <li className={styles.options}>
+              <span className={styles.optionTitle}>Preciptation</span>
+              <span className={`${styles.option} ${metricSystem ? styles.active : ""}`}>Millimeters (mm)</span>
+              <span className={`${styles.option} ${metricSystem ? "" : styles.active}`}>Inches (in)</span>
+            </li>
+          </ul>
         </div>
       )}
     </header>

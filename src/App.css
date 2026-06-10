@@ -5,6 +5,7 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  border-radius: 0.5rem;
 }
 
 :root {
@@ -24,8 +25,14 @@
   --Blue700: hsl(248, 70%, 36%);
 }
 
-body{
+body {
   background-color: var(--Neutral900);
   color: var(--Neutral0);
+  font-family: var(--text);
   padding: 15px;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--text);
 }

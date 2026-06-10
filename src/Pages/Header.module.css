@@ -1,22 +1,21 @@
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.logo{
+.logo {
   width: 130px;
 }
 
-.button{
+.button {
   width: 5.2rem;
   height: 2rem;
   background-color: var(--Neutral800);
   border: none;
-  border-radius: .3rem;
 
-  font-family: var(--text);
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--Neutral0);
   font-weight: 250;
 
@@ -25,7 +24,7 @@
   justify-content: space-evenly;
 }
 
-.button:before{
+.button:before {
   content: "";
   display: block;
   width: 16px;
@@ -33,7 +32,7 @@
   background: url("../assets/svg/icon-units.svg") no-repeat;
 }
 
-.button:after{
+.button:after {
   content: "";
   display: block;
   width: 13px;
@@ -41,13 +40,57 @@
   background: url("../assets/svg/icon-dropdown.svg") no-repeat;
 }
 
-.optionTitle{
-  
+.optionsWrapper {
+  position: absolute;
+  top: 2.5rem;
+  right: 0px;
+  width: 10rem;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--Neutral800);
+  border: 1px solid var(--Neutral700);
 }
 
-.option{
-
+.optionsWrapper button {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  color: var(--Neutral0);
+  font-size: 0.85rem;
+  padding: 5px;
 }
-.active{
-  color: red;
+
+.options {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5rem;
+}
+
+.optionTitle {
+  font-size: 0.75rem;
+  color: var(--Neutral300);
+  padding: 5px 5px 0 5px;
+}
+
+.option {
+  font-size: 0.85rem;
+  padding: 5px;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.active {
+  background-color: var(--Neutral700);
+}
+
+.active::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 11px;
+  background: url("../assets/svg/icon-checkmark.svg");
 }
