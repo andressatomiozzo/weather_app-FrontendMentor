@@ -5,12 +5,12 @@ import SearchContext from "./createContext/SearchContext";
 import Results from "./Pages/Results/Results"
 
 const Wrapper = () => {
-  const { cityError, weatherData } = React.useContext(SearchContext);
+  const { cityError, cityData, weatherData } = React.useContext(SearchContext);
   return (
     <>
       <Header />
       <Form />
-      {weatherData && <Results/>}
+      {cityData && weatherData && <Results/>}
       {cityError && <p>{cityError}</p>}
       
     </>

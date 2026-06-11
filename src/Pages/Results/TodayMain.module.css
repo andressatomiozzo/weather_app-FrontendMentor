@@ -1,0 +1,43 @@
+.wrapper {
+  background: url("../../assets/svg/bg-today-small.svg") no-repeat;
+  background-size: cover;
+  aspect-ratio: 343 /268;
+  max-width: 343px;
+  margin: 20px auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeLocation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.location {
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 3%;
+}
+
+.data {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Neutral200);
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 40px;
+  padding-right: 20px;
+}
+
+.temperature {
+  font-size: 6rem;
+  font-weight: 600;
+  font-style: italic;
+}
