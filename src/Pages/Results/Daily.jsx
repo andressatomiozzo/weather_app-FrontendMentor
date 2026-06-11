@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Daily.module.css"
 import SearchContext from "../../createContext/SearchContext";
 import DailyCard from "./DailyCard";
 
@@ -13,19 +14,22 @@ const Daily = () => {
   }));
 
   return (
-    <div>
-      {forecast.map((day) => (
-        <DailyCard
-          key={day.time.getTime()}
-          temp_max={day.temp_max}
-          temp_min={day.temp_min}
-          time={day.time.toLocaleDateString("en-US", {
-            weekday: "short",
-          })}
-          weather_code={day.weather_code}
-        />
-      ))}
-    </div>
+    <section>
+      <h2 className="subtitle">Daily forecast</h2>
+      <div className={styles.cards}>
+        {forecast.map((day) => (
+          <DailyCard
+            key={day.time.getTime()}
+            temp_max={day.temp_max}
+            temp_min={day.temp_min}
+            time={day.time.toLocaleDateString("en-US", {
+              weekday: "short",
+            })}
+            weather_code={day.weather_code}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

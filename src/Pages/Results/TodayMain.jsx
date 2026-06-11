@@ -8,7 +8,7 @@ const TodayMain = () => {
   const currentCity = cityData.results[0];
 
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.timeLocation}>
         <span className={styles.location}>
           {currentCity.name}, {currentCity.country}
@@ -26,7 +26,7 @@ const TodayMain = () => {
         <span className={styles.weatherCode}> {currentWeather.weather_code}</span>
         <span className={styles.temperature}> {Math.trunc(currentWeather.temperature_2m)}º</span>
       </div>
-    </div>
+    </section>
   );
 };
 

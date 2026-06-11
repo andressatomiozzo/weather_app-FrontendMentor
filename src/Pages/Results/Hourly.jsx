@@ -17,8 +17,8 @@ const Hourly = () => {
   }));
 
   return (
-    <div>
-      <h2>Hourly forecast</h2>
+    <section>
+      <h2 className="subtitle">Hourly forecast</h2>
       <button onClick={() => setOpenMenu(!openMenu)}>{activeDay}</button>
       {openMenu &&
         days.map((day) => (
@@ -41,7 +41,7 @@ const Hourly = () => {
           />
         );
       })}
-    </div>
+    </section>
   );
 };
 

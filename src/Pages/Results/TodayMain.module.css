@@ -2,8 +2,9 @@
   background: url("../../assets/svg/bg-today-small.svg") no-repeat;
   background-size: cover;
   aspect-ratio: 343 /268;
-  max-width: 343px;
-  margin: 20px auto;
+  max-width: 4000px;
+  margin: 0 auto;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -40,4 +41,10 @@
   font-size: 6rem;
   font-weight: 600;
   font-style: italic;
+}
+
+@media (max-width: 340px) {
+  .location {
+    font-size: 1.5rem;
+  }
 }

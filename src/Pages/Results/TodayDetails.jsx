@@ -9,12 +9,12 @@ const TodayDetails = () => {
 
 
   return (
-    <div className={styles.todayCards}>
+    <section className={styles.todayCards}>
       <TodayDetailsCard title="Feels Like" description={`${Math.trunc(currentWeather.apparent_temperature)}º`} />
       <TodayDetailsCard title="Humidity" description={`${Math.trunc(currentWeather.relative_humidity_2m)}%`} />
       <TodayDetailsCard title="Wind" description={`${Math.trunc(currentWeather.wind_speed_10m)} km/h`} />
       <TodayDetailsCard title="Preciptation" description={`${Math.trunc(currentWeather.precipitation)} mm`} />
-    </div>
+    </section>
   )
 }
 

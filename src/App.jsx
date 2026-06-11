@@ -7,13 +7,13 @@ import "./App.css"
 const App = () => {
 
   return (
-    <div>
+    <>
       <SystemProvider>
         <SearchProvider>
           <Wrapper/>
         </SearchProvider>
       </SystemProvider>
-    </div>
+    </>
   );
 };
 
