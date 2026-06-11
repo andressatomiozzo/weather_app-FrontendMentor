@@ -5,12 +5,12 @@ import Hourly from "./Hourly";
 
 const Results = () => {
   return (
-    <>
+    <main className="results">
       <TodayMain />
       <TodayDetails />
       <Daily />
       <Hourly />
-    </>
+    </main>
   );
 };
 

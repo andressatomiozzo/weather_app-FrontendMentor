@@ -2,8 +2,8 @@
   background: url("../../assets/svg/bg-today-small.svg") no-repeat;
   background-size: cover;
   aspect-ratio: 343 /268;
-  max-width: 4000px;
-  margin: 0 auto;
+  margin: 0;
+  width: 100%;
   padding: 20px;
 
   display: flex;
@@ -46,5 +46,16 @@
 @media (max-width: 340px) {
   .location {
     font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    background: url("../../assets/svg/bg-today-large.svg") no-repeat;
+    background-size: cover;
+    aspect-ratio: 800 /268;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

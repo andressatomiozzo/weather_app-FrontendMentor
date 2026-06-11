@@ -18,7 +18,7 @@ const Hourly = () => {
   }));
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} hourlySection`}>
       <div className={styles.information}>
         <h2 className="subtitle">Hourly forecast</h2>
         <button className={styles.button} onClick={() => setOpenMenu(!openMenu)}>

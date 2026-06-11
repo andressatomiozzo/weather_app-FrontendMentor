@@ -7,6 +7,7 @@
 
   scrollbar-width: thin;
   scrollbar-color: var(--Neutral700) var(--Neutral800);
+  position: relative;
 }
 
 .information {
@@ -39,7 +40,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 30px;
+  right: 10px;
   background-color: var(--Neutral800);
   border: 1px solid var(--Neutral700);
   width: 12rem;

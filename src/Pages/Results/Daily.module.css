@@ -1,8 +1,14 @@
-.cards{
+.cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: center;
   text-align: center;
   margin-top: 20px;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(7, 1fr);
+  }
 }

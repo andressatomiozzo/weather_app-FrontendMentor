@@ -1,4 +1,4 @@
-.title{
+.title {
   font-family: var(--title);
   font-weight: 500;
   font-size: 3.125rem;
@@ -6,34 +6,36 @@
   padding: 0 20px;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.input, .button {
+.input,
+.button {
   height: 2.725rem;
   font-family: var(--text);
   font-size: 1rem;
 }
 
-.input{
+.input {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
   align-items: center;
   padding-left: 52px;
   background: url("../assets/svg/icon-search.svg") no-repeat;
-    background-position: 20px center;
+  background-position: 20px center;
   background-size: 18px;
 }
 
-.input svg *{
+.input svg * {
   fill: var(--Neutral200);
 }
 
-.input, .input::placeholder{
+.input,
+.input::placeholder {
   background-color: var(--Neutral800);
   border: none;
   color: var(--Neutral200);
@@ -47,19 +49,30 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.button{
+.button {
   background-color: var(--Blue500);
   border: none;
   color: var(--Neutral200);
   font-weight: 600;
+  padding: 10px 20px;
 }
 
-.button:focus{
+.button:focus {
   outline: none;
   border: 2px solid var(--Neutral900);
   box-shadow: 0 0 0 2px var(--Blue500);
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--Blue700);
+}
+
+@media (min-width: 700px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 680px;
+    margin: auto;
+  }
+
 }

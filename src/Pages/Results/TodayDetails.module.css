@@ -1,5 +1,13 @@
 .todayCards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   gap: 20px;
+  justify-content: space-between;
+}
+
+@media(min-width: 700px) {
+  .todayCards{
+    display: flex;
+
+  }
 }
