@@ -1,9 +1,11 @@
+import styles from "./HourlyCard.module.css"
+
 const HourlyCard = ({time, weather_code, temp}) => {
   return (
-    <div>
-      <span>Hora:{time}</span>
-      <span>Tempo:{weather_code}</span>
-      <span>Temperatura:{temp}</span>
+    <div className={styles.card}>
+      <span className={styles.weather_code}>{weather_code}</span>
+      <span className={styles.time}>{time}</span>
+      <span className={styles.temp}>{temp}º</span>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Hourly.module.css";
 import SearchContext from "../../createContext/SearchContext";
 import HourlyCard from "./HourlyCard";
 
@@ -17,30 +18,35 @@ const Hourly = () => {
   }));
 
   return (
-    <section>
-      <h2 className="subtitle">Hourly forecast</h2>
-      <button onClick={() => setOpenMenu(!openMenu)}>{activeDay}</button>
-      {openMenu &&
-        days.map((day) => (
-          <span key={day} onClick={() => setActiveDay(day)}>
-            {day}
-          </span>
-        ))}
-
-      {forecast.map((hour) => {
-        const day = hour.time.toLocaleDateString("en-US", { weekday: "long" });
-
-        if (day !== activeDay) return null;
-
-        return (
-          <HourlyCard
-            key={hour.time.getTime()}
-            time={hour.time.toLocaleTimeString("en-US", { hour: "numeric", hour12: true })}
-            weather_code={hour.weather_code}
-            temp={hour.temp}
-          />
-        );
-      })}
+    <section className={styles.section}>
+      <div className={styles.information}>
+        <h2 className="subtitle">Hourly forecast</h2>
+        <button className={styles.button} onClick={() => setOpenMenu(!openMenu)}>
+          {activeDay}
+        </button>
+      </div>
+      {openMenu && (
+        <div className={styles.options}>
+          {days.map((day) => (
+            <span key={day} className={styles.option} onClick={() => setActiveDay(day)}>
+              {day}
+            </span>))}
+        </div>
+      )}
+      <div className={styles.cards}>
+        {forecast.map((hour) => {
+          const day = hour.time.toLocaleDateString("en-US", { weekday: "long" });
+          if (day !== activeDay) return null;
+          return (
+            <HourlyCard
+              key={hour.time.getTime()}
+              time={hour.time.toLocaleTimeString("en-US", { hour: "numeric", hour12: true })}
+              weather_code={hour.weather_code}
+              temp={hour.temp}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 };
