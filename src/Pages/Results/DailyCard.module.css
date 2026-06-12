@@ -8,6 +8,11 @@
   padding: 10px;
 }
 
+.weatherCode{
+  width: 70px;
+  margin: auto;
+}
+
 .temp{
   display: flex;
   justify-content: space-between;

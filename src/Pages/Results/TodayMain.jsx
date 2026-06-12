@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./TodayMain.module.css";
 import SearchContext from "../../createContext/SearchContext";
+import WeatherCode from "../../Components/WeatherCode";
 
 const TodayMain = () => {
   const { weatherData, cityData } = React.useContext(SearchContext);
@@ -23,7 +24,7 @@ const TodayMain = () => {
         </span>
       </div>
       <div className={styles.weather}>
-        <span className={styles.weatherCode}> {currentWeather.weather_code}</span>
+        <WeatherCode className={styles.weatherCode} weatherCode={currentWeather.weather_code}/>
         <span className={styles.temperature}> {Math.trunc(currentWeather.temperature_2m)}º</span>
       </div>
     </section>

@@ -37,6 +37,10 @@
   padding-right: 20px;
 }
 
+.weatherCode{
+  width: 150px;
+}
+
 .temperature {
   font-size: 6rem;
   font-weight: 600;
