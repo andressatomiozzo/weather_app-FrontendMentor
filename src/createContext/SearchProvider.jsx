@@ -1,12 +1,14 @@
 import React from "react";
 import SearchContext from "./SearchContext";
 import OpenMeteo from "./useSearch";
+import SystemContext from "./SystemContext";
 
 const SearchProvider = ({ children }) => {
   const [cityData, setCityData] = React.useState(null);
   const [cityError, setCityError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const { weatherData, weatherError, weatherLoading, request } = OpenMeteo();
+  const { metricSystem } = React.useContext(SystemContext);
 
   const searchCity = async (cityName) => {
     try {
@@ -17,12 +19,7 @@ const SearchProvider = ({ children }) => {
       if (!response.ok) throw new Error("No search results found!");
       if (!json.results) throw new Error("No search results found!");
       setCityData(json);
-      console.log(json)
-      const { latitude, longitude } = json.results[0];
-
-      const weatherData = await request(latitude, longitude);
-
-      console.log(weatherData);
+      console.log(json);
     } catch (err) {
       setCityError(err.message);
       setCityData(null);
@@ -31,10 +28,21 @@ const SearchProvider = ({ children }) => {
     }
   };
 
+  React.useEffect(() => {
+    const searchWeather = async () => {
+      const { latitude, longitude } = cityData.results[0];
+
+      const weatherData = await request(latitude, longitude);
+
+      console.log(weatherData);
+      console.log(metricSystem)
+    };
+
+    cityData && searchWeather()
+  }, [metricSystem, cityData, request]);
+
   return (
-    <SearchContext
-      value={{ searchCity, cityError, loading, cityData, weatherData, weatherError, weatherLoading }}
-    >
+    <SearchContext value={{ searchCity, cityError, loading, cityData, weatherData, weatherError, weatherLoading }}>
       {children}
     </SearchContext>
   );

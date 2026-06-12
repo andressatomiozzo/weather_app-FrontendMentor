@@ -1,7 +1,9 @@
 import React from "react";
 import { fetchWeatherApi } from "openmeteo";
+import SystemContext from "./SystemContext";
 
 const useSearch = () => {
+  const { metricSystem } = React.useContext(SystemContext);
   const [weatherData, setWeatherData] = React.useState(null);
   const [weatherError, setWeatherError] = React.useState(false);
   const [weatherLoading, setWeatherLoading] = React.useState(false);
@@ -9,7 +11,7 @@ const useSearch = () => {
   const request = React.useCallback(
     async (latitude, longitude) => {
       // Passar parâmetros e url para fazer o fetch
-      const params = {
+      let params = {
         latitude: latitude,
         longitude: longitude,
         daily: ["weather_code", "temperature_2m_max", "temperature_2m_min"],
@@ -22,8 +24,16 @@ const useSearch = () => {
           "apparent_temperature",
           "relative_humidity_2m",
         ],
-        timezone: "auto",
       };
+
+      if (metricSystem) {
+        params = {
+          ...params,
+          temperature_unit: "fahrenheit",
+          wind_speed_unit: "mph",
+          precipitation_unit: "inch",
+        };
+      }
       const url = "https://api.open-meteo.com/v1/forecast";
 
       try {
@@ -86,7 +96,7 @@ const useSearch = () => {
         setWeatherLoading(false);
       }
     },
-    [setWeatherLoading, setWeatherData, setWeatherError],
+    [setWeatherLoading, setWeatherData, setWeatherError, metricSystem],
   );
 
   return {

@@ -21,7 +21,8 @@ const Hourly = () => {
     <section className={`${styles.section} hourlySection`}>
       <div className={styles.information}>
         <h2 className="subtitle">Hourly forecast</h2>
-        <button className={styles.button} onClick={() => setOpenMenu(!openMenu)}>
+        <button className={styles.button} onClick={() => setOpenMenu(!openMenu)} >
+          {/* onBlur={() => setOpenMenu(false)} */}
           {activeDay}
         </button>
       </div>

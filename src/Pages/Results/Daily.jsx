@@ -6,6 +6,8 @@ import DailyCard from "./DailyCard";
 const Daily = () => {
   const { weatherData } = React.useContext(SearchContext);
 
+
+
   const forecast = weatherData.daily.time.map((time, index) => ({
     time,
     temp_max: Math.trunc(weatherData.daily.temperature_2m_max[index]),
