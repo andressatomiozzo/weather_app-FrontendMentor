@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Form.module.css";
 import SearchContext from "../createContext/SearchContext";
+import useClickOut from "../Hooks/useClickOut"
+
 
 const Form = () => {
   const { searchCity, loading} = React.useContext(SearchContext);
-  const [suggestions, setSuggestions] = React.useState(true);
+  const [suggestions, setSuggestions] = React.useState(false);
+  const suggestionsRef = React.useRef()
 
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(null);
@@ -35,6 +38,9 @@ const Form = () => {
     setValue("");
   };
 
+  useClickOut(suggestionsRef, setSuggestions)
+
+
   return (
     <>
       <h1 className={styles.title}>How's the sky looking today?</h1>
@@ -53,7 +59,7 @@ const Form = () => {
         />
 
         {suggestions && (
-          <ul className={styles.suggestions}>
+          <ul className={styles.suggestions} ref={suggestionsRef}>
             <li onClick={handleLiClick}>Berlin</li>
             <li onClick={handleLiClick}>São Paulo</li>
             <li onClick={handleLiClick}>Bloemfontein</li>

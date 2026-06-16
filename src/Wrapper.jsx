@@ -11,7 +11,7 @@ const Wrapper = () => {
       <Header />
       <Form />
       {cityData && weatherData && <Results/>}
-      {cityError && <p>{cityError}</p>}
+      {cityError && <p style={{ margin:"auto", fontWeight: "500", fontSize: "1.2rem"}}>{cityError}</p>}
       
     </>
   );

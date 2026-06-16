@@ -46,7 +46,7 @@
   right: 0px;
   width: 10rem;
   padding: 5px;
-  z-index: 100;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
@@ -57,12 +57,20 @@
 
 .optionsWrapper button {
   background-color: transparent;
-  border: none;
-  text-align: left;
-  color: var(--Neutral0);
+  border: 1px solid transparent;
   font-size: 0.85rem;
   padding: 5px;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
+  color: var(--Neutral0);
+  text-align: left;
+}
+
+.optionsWrapper button:hover {
+  cursor: pointer;
+}
+
+.optionsWrapper button:focus {
+  border-color: var(--Neutral0);
 }
 
 .options {

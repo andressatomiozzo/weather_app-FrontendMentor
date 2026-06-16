@@ -79,7 +79,7 @@
   list-style: none;
   margin: 4px 0 0;
   padding: 8px;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .loading{

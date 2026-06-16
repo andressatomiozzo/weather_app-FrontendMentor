@@ -22,6 +22,7 @@ const SearchProvider = ({ children }) => {
     } catch (err) {
       setCityError(err.message);
       setCityData(null);
+      setLoading(false);
     }
   };
 
@@ -30,7 +31,6 @@ const SearchProvider = ({ children }) => {
       const { latitude, longitude } = cityData.results[0];
 
       await request(latitude, longitude);
-      console.log('terminou')
       setLoading(false);
     };
 
