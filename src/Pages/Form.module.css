@@ -68,7 +68,8 @@
   background-color: var(--Blue700);
 }
 
-.suggestions, .loading {
+.suggestions,
+.loading {
   position: absolute;
   top: 50%;
   left: 0;
@@ -82,18 +83,25 @@
   z-index: 500;
 }
 
-.loading{
+.loading {
   padding: 10px 20px;
   display: flex;
   gap: 10px;
 }
 
-.loading::before{
+.loading::before {
   content: "";
   display: block;
   width: 16px;
   height: 16px;
   background: url("../assets/svg/icon-loading.svg");
+  animation: loading 1.3s linear infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .suggestions li {
@@ -115,7 +123,8 @@
     margin: auto;
   }
 
-  .suggestions, .loading {
+  .suggestions,
+  .loading {
     top: 100%;
   }
 }
