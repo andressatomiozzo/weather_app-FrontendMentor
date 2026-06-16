@@ -26,7 +26,7 @@ const useSearch = () => {
         ],
       };
 
-      if (metricSystem) {
+      if (!metricSystem) {
         params = {
           ...params,
           temperature_unit: "fahrenheit",

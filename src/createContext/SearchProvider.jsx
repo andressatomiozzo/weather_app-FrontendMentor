@@ -19,12 +19,9 @@ const SearchProvider = ({ children }) => {
       if (!response.ok) throw new Error("No search results found!");
       if (!json.results) throw new Error("No search results found!");
       setCityData(json);
-      console.log(json);
     } catch (err) {
       setCityError(err.message);
       setCityData(null);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -32,13 +29,12 @@ const SearchProvider = ({ children }) => {
     const searchWeather = async () => {
       const { latitude, longitude } = cityData.results[0];
 
-      const weatherData = await request(latitude, longitude);
-
-      console.log(weatherData);
-      console.log(metricSystem)
+      await request(latitude, longitude);
+      console.log('terminou')
+      setLoading(false);
     };
 
-    cityData && searchWeather()
+    cityData && searchWeather();
   }, [metricSystem, cityData, request]);
 
   return (
