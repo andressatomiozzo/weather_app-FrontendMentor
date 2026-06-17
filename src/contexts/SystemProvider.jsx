@@ -10,7 +10,7 @@ const SystemProvider = ({ children }) => {
     return true;
   });
 
-  return <SystemContext value={{ metricSystem, setMetricSystem }}>{children}</SystemContext>;
+  return <SystemContext.Provider value={{ metricSystem, setMetricSystem }}>{children}</SystemContext.Provider>;
 };
 
 export default SystemProvider;

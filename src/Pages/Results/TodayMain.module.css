@@ -5,6 +5,7 @@
   margin: 0;
   width: 100%;
   padding: 20px;
+  border-radius: 1.3rem;
 
   display: flex;
   flex-direction: column;

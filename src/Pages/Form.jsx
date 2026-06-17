@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Form.module.css";
-import SearchContext from "../createContext/SearchContext";
+import SearchContext from "../contexts/SearchContext";
 import useClickOut from "../Hooks/useClickOut"
 
 

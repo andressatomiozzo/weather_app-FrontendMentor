@@ -5,7 +5,6 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
-  border-radius: 0.5rem;
 }
 
 :root {
@@ -35,6 +34,7 @@ body {
 button {
   cursor: pointer;
   font-family: var(--text);
+  border-radius: 0.5rem;
 }
 
 #root {
@@ -74,7 +74,7 @@ button {
   #root {
     max-width: 1270px;
   }
-    .results {
+  .results {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 20px;
@@ -85,4 +85,3 @@ button {
     grid-row: 1/4;
   }
 }
-

@@ -8,6 +8,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--Neutral700) var(--Neutral800);
   position: relative;
+  border-radius: 0.5rem;
 }
 
 .information {

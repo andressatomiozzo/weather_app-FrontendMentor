@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Pages/Header";
 import Form from "./Pages/Form";
-import SearchContext from "./createContext/SearchContext";
-import Results from "./Pages/Results/Results"
+import SearchContext from "./contexts/SearchContext";
+import Results from "./Pages/Results/Results";
 
 const Wrapper = () => {
   const { cityError, cityData, weatherData } = React.useContext(SearchContext);
@@ -10,9 +10,8 @@ const Wrapper = () => {
     <>
       <Header />
       <Form />
-      {cityData && weatherData && <Results/>}
-      {cityError && <p style={{ margin:"auto", fontWeight: "500", fontSize: "1.2rem"}}>{cityError}</p>}
-      
+      {cityData && weatherData && <Results />}
+      {cityError && <p style={{ margin: "auto", fontWeight: "500", fontSize: "1.2rem" }}>{cityError}</p>}
     </>
   );
 };

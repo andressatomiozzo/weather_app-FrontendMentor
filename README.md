@@ -35,8 +35,6 @@ Acesse o [link para o site hospedado na Vercel](https://weather-app-theta-ten-87
 
 ## 🧠 Aprendizados
 
-Descreva o que você aprendeu com esse projeto:
-
 * Trabalhar com estado no React;
 * Manipulação de DOM;
 * Consumo de API;

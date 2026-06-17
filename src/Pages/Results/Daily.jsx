@@ -1,12 +1,10 @@
 import React from "react";
-import styles from "./Daily.module.css"
-import SearchContext from "../../createContext/SearchContext";
+import styles from "./Daily.module.css";
+import SearchContext from "../../contexts/SearchContext";
 import DailyCard from "./DailyCard";
 
 const Daily = () => {
   const { weatherData } = React.useContext(SearchContext);
-
-
 
   const forecast = weatherData.daily.time.map((time, index) => ({
     time,

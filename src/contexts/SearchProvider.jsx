@@ -38,9 +38,9 @@ const SearchProvider = ({ children }) => {
   }, [metricSystem, cityData, request]);
 
   return (
-    <SearchContext value={{ searchCity, cityError, loading, cityData, weatherData, weatherError, weatherLoading }}>
+    <SearchContext.Provider value={{ searchCity, cityError, loading, cityData, weatherData, weatherError, weatherLoading }}>
       {children}
-    </SearchContext>
+    </SearchContext.Provider>
   );
 };
 

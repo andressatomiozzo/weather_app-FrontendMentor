@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TodayMain.module.css";
-import SearchContext from "../../createContext/SearchContext";
+import SearchContext from "../../contexts/SearchContext";
 import WeatherCode from "../../Components/WeatherCode";
 
 const TodayMain = () => {

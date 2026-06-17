@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hourly.module.css";
-import SearchContext from "../../createContext/SearchContext";
+import SearchContext from "../../contexts/SearchContext";
 import HourlyCard from "./HourlyCard";
 import useClickOut from "../../Hooks/useClickOut";
 

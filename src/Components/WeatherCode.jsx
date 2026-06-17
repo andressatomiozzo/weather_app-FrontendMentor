@@ -51,6 +51,9 @@ const WeatherCode = ({ weatherCode, className }) => {
     case 73:
     case 75:
       return <img src={Snow} alt="Snow" className={className} />;
+
+    default:
+      return <img src={Sunny} alt="Clear sky" className={className} />;
   }
 };
 
